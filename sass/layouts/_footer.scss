@@ -1,0 +1,10 @@
+footer {
+	width: 100%;
+	height: 200px;
+	background-color: mix($color-primary, rgb(41, 41, 41), 5%);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}

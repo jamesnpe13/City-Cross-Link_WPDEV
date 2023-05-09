@@ -1,0 +1,26 @@
+/*!
+Theme Name: Theme_01
+Author: James Elazegui
+*/
+
+// base
+@import "./base/reset";
+@import "./base/typography";
+
+// abstracts
+@import "./abstracts/variables";
+@import "./abstracts/colors";
+@import "./abstracts/mixins";
+
+// layouts
+@import "./layouts/footer";
+@import "./layouts//header";
+@import "./layouts/main";
+@import "./layouts/sidebar";
+
+// pages
+@import "./pages/home";
+
+// components
+@import "./components/card-container";
+@import "./components/button-v1";

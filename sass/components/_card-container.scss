@@ -1,0 +1,22 @@
+.card-container {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	.card {
+		width: 300px;
+		box-shadow: 5px 5px 20px rgba(83, 70, 141, 0.242);
+		border-radius: 10px;
+		overflow: hidden;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		img {
+			width: 100%;
+			aspect-ratio: 4 / 3;
+			object-fit: cover;
+			border-radius: 8px;
+		}
+	}
+}
