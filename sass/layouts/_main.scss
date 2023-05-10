@@ -1,15 +1,15 @@
 section {
-	margin-inline: auto;
+	min-height: 200px;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 30px;
 
-	.container {
-		padding-inline: 30px;
-		padding-block: 30px;
+	.section-container {
+		padding: $padding-section-inline $padding-section-block;
+		max-width: $width-section-container;
 		width: 100%;
-		max-width: 1150px;
+		height: 100%;
 	}
 }
+
+

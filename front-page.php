@@ -1,7 +1,74 @@
 <?php get_header(); ?>
 
 
-<section id="hero">
+
+
+
+
+
+
+
+
+
+<!-- hero -->
+
+<section class="hero bg-primary">
+
+	<div class="section-container">
+
+		<img class="logo-icon" src="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(), 'logos_logo_icon', true)); ?>" alt="">
+
+
+		<div class="hero-text">
+			<!-- <h2 class="text-a">citycrosslink</h2> -->
+
+			<h1 class="text-b">
+				Where God meets your needs <br> through His Word.
+			</h1>
+		</div>
+
+
+		<a class="button bg-white" href="<?php echo get_post_meta(get_the_ID(), 'hero_cta_link', true) ?>">
+			<?php echo get_post_meta(get_the_ID(), 'hero_cta_button_label', true) ?>
+		</a>
+
+	</div>
+
+	<img class="bg-image" src="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(), 'hero_image', true)); ?>" alt="">
+
+</section>
+
+<!-- about -->
+
+<section class="about">
+	<div class="section-container">
+
+	</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section id="hero">
 	<div class="container">
 		<div class="hero-text">
 			<?php echo get_post_meta(get_the_ID(), 'introduction', true) ?>
@@ -51,7 +118,7 @@
 </section>
 
 
-</div>
+</div> -->
 
 
 <?php get_footer(); ?>

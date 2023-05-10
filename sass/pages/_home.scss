@@ -1,72 +1,56 @@
 body.home {
-	section {
-		&#hero {
-			max-width: none;
-			height: 100vh;
-			justify-content: center;
-			align-items: center;
-			margin-bottom: 0;
+	section.hero {
+		position: relative;
+		height: 100vh;
+		overflow: hidden;
 
-			.container {
-				position: relative;
-
-				.hero-text {
-					display: flex;
-					flex-direction: column;
-
-					.hero-text-a {
-						color: $font-color-v1;
-						font-size: 2.5rem;
-						font-weight: 400;
-						text-align: left;
-						// filter: drop-shadow(3px 3px 15px rgba(56, 48, 76, 0.563));
-					}
-
-					.underline {
-						height: 10px;
-						width: 100px;
-						background-color: $color-primary;
-						margin-block: 20px;
-					}
-
-					.hero-text-b {
-						color: $font-color-v1;
-						font-size: 3rem;
-						font-weight: 600;
-						text-align: left;
-						// filter: drop-shadow(3px 3px 15px rgba(56, 48, 76, 0.563));
-					}
-
-					button {
-						margin-top: 30px;
-					}
-				}
-
-				.hero-image {
-					position: absolute;
-					z-index: -100;
-					width: 40vw;
-					min-width: 500px;
-					max-width: 600px;
-					aspect-ratio: 1 / 1;
-					object-fit: contain;
-					top: 50%;
-					right: 50px;
-					transform: translate(0%, -50%);
-					// filter: brightness(0.6) saturate(1);
-				}
-			}
-		}
-
-		&#about {
+		.section-container {
+			z-index: 1;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			text-align: center;
-			background-color: $color-primary;
-			color: white;
-			height: 300px;
+
+			.logo-icon {
+				width: 70px;
+				aspect-ratio: 1 / 1;
+				object-fit: contain;
+			}
+
+			.hero-text {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				filter: $dropshadow-v1;
+
+				.text-a {
+					color: $color-white;
+					font-size: 2rem;
+					font-weight: 600;
+					margin-bottom: 30px;
+				}
+
+				.text-b {
+					color: $color-white;
+					font-size: 4rem;
+					text-align: center;
+				}
+			}
+		}
+
+		.bg-image {
+			$x-offset: 200px;
+			$y-offset: 150px;
+
+			position: absolute;
+			top: calc(50% + $y-offset);
+			left: calc(50% + $x-offset);
+			transform: translateX(-50%) translateY(-50%);
+			height: calc(100% + 200px);
+			aspect-ratio: 1 / 1;
+			object-fit: contain;
+			opacity: 0.5;
 		}
 	}
 }

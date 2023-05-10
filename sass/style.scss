@@ -2,15 +2,16 @@
 Theme Name: Theme_01
 Author: James Elazegui
 */
+// abstracts
+@import "./abstracts/colors";
+@import "./abstracts/variables";
+@import "./abstracts/effects";
+@import "./abstracts/mixins";
 
 // base
 @import "./base/reset";
 @import "./base/typography";
-
-// abstracts
-@import "./abstracts/variables";
-@import "./abstracts/colors";
-@import "./abstracts/mixins";
+@import "./base/color-templates";
 
 // layouts
 @import "./layouts/footer";

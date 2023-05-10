@@ -18,6 +18,14 @@
 
 	<header>
 		<nav class="header-nav">
+			<div class="logo">
+				<div class="logo-container">
+					<img class="logo-a" src="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(), 'logos_logo_icon', true)); ?>" alt="">
+				</div>
+
+				<img class="logo-b" src="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(), 'logos_logo_type', true)); ?>" alt="">
+			</div>s
+
 			<?php wp_nav_menu(
 				array(
 					'theme_location' => 'primary',

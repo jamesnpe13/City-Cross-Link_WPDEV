@@ -1,0 +1,4 @@
+// dropshadows
+$dropshadow-v1: drop-shadow(3px 3px 15px mix(mix($color-primary, $color-black, 40%), transparent, 30%));
+$dropshadow-v2: 3px 3px 15px mix(mix($color-primary, $color-black, 40%), transparent, 30%);
+// $glass-v1: ;

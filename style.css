@@ -2,7 +2,7 @@
 Theme Name: Theme_01
 Author: James Elazegui
 */
-@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -11,7 +11,10 @@ Author: James Elazegui
 
 /*
 font-family: 'Cutive Mono', monospace;
+font-family: 'Cutive Mono', monospace;
+font-family: 'DM Serif Display', serif;
 font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif;
 */
@@ -19,8 +22,50 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+h1 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 900;
+}
+
+h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 900;
+}
+
 a {
   text-decoration: none;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-primary {
+  background-color: #0088FF;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-black {
+  background-color: rgb(22, 22, 22);
+}
+
+.bg-grey-v1 {
+  background-color: #454545;
+}
+
+.bg-grey-v2 {
+  background-color: #737373;
+}
+
+.bg-grey-v3 {
+  background-color: #a2a2a2;
+}
+
+.bg-grey-v4 {
+  background-color: #d0d0d0;
 }
 
 footer {
@@ -32,6 +77,7 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  display: none;
 }
 
 header {
@@ -39,28 +85,56 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  color: white;
+  color: #0088ff;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  background-color: #0088FF;
+  border-bottom: 1px solid white;
 }
 header .header-nav {
-  padding-inline: 30px;
-  padding-block: 30px;
   width: 100%;
-  max-width: 1150px;
+  height: 60px;
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+header .header-nav .logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .header-nav .logo .logo-container {
+  border-right: 1px solid white;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+header .header-nav .logo .logo-container .logo-a {
+  height: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+     object-fit: contain;
+  scale: 0.6;
+}
+header .header-nav .logo .logo-b {
+  height: 80%;
+  transform: translateY(-5%);
 }
 header .header-nav ul {
-  color: rgb(55, 55, 55);
   list-style: none;
   display: flex;
-  gap: 50px;
+  display: none;
 }
 header .header-nav li {
   position: relative;
   transition: all 200ms;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  padding-inline: 30px;
 }
 header .header-nav li .sub-menu {
   display: none;
@@ -96,77 +170,64 @@ header .header-nav .current-menu-item {
 }
 
 section {
-  margin-inline: auto;
+  min-height: 200px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
 }
-section .container {
-  padding-inline: 30px;
-  padding-block: 30px;
+section .section-container {
+  padding: 50px 50px;
+  max-width: 1100px;
   width: 100%;
-  max-width: 1150px;
+  height: 100%;
 }
 
-body.home section#hero {
-  max-width: none;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0;
-}
-body.home section#hero .container {
+body.home section.hero {
   position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
-body.home section#hero .container .hero-text {
+body.home section.hero .section-container {
+  z-index: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-body.home section#hero .container .hero-text .hero-text-a {
-  color: rgb(55, 55, 55);
-  font-size: 2.5rem;
-  font-weight: 400;
-  text-align: left;
-}
-body.home section#hero .container .hero-text .underline {
-  height: 10px;
-  width: 100px;
-  background-color: #0088FF;
-  margin-block: 20px;
-}
-body.home section#hero .container .hero-text .hero-text-b {
-  color: rgb(55, 55, 55);
-  font-size: 3rem;
-  font-weight: 600;
-  text-align: left;
-}
-body.home section#hero .container .hero-text button {
-  margin-top: 30px;
-}
-body.home section#hero .container .hero-image {
-  position: absolute;
-  z-index: -100;
-  width: 40vw;
-  min-width: 500px;
-  max-width: 600px;
+body.home section.hero .section-container .logo-icon {
+  width: 70px;
   aspect-ratio: 1/1;
   -o-object-fit: contain;
      object-fit: contain;
-  top: 50%;
-  right: 50px;
-  transform: translate(0%, -50%);
 }
-body.home section#about {
+body.home section.hero .section-container .hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  background-color: #0088FF;
+  filter: drop-shadow(3px 3px 15px rgba(13, 68, 115, 0.3));
+}
+body.home section.hero .section-container .hero-text .text-a {
   color: white;
-  height: 300px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+body.home section.hero .section-container .hero-text .text-b {
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+}
+body.home section.hero .bg-image {
+  position: absolute;
+  top: calc(50% + 150px);
+  left: calc(50% + 200px);
+  transform: translateX(-50%) translateY(-50%);
+  height: calc(100% + 200px);
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.5;
 }
 
 .card-container {
@@ -198,15 +259,29 @@ body.home section#about {
   width: max-content;
   padding: 10px 40px;
   border-radius: 8px;
-  color: white;
-  background-color: #0088FF;
-  border: 2px solid #0088FF;
   font-size: 1rem;
+  font-weight: 600;
   transition: 400ms all;
-  box-shadow: 3px 3px 15px rgba(39, 39, 81, 0.24);
+  box-shadow: 3px 3px 15px rgba(13, 68, 115, 0.3);
   margin-top: 30px;
 }
-.button:hover {
+.button.bg-primary {
+  background-color: #0088FF;
+  color: white;
+  border: 2px solid white;
+}
+.button.bg-primary:hover {
   background-color: white;
   color: #0088FF;
+  border: 2px solid white;
+}
+.button.bg-white {
+  background-color: white;
+  color: #0088FF;
+  border: 2px solid #0088ff;
+}
+.button.bg-white:hover {
+  background-color: #0088FF;
+  color: white;
+  border: 2px solid white;
 }/*# sourceMappingURL=style.css.map */
