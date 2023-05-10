@@ -5,9 +5,19 @@ function load_assets()
 {
 	wp_enqueue_style('style', get_theme_file_uri() . '/style.css');
 	wp_enqueue_script('script', get_theme_file_uri() . '/js/main.js');
-}
+	
+	// cdn register
+	wp_register_style('Hamburgers', get_theme_file_uri() . "/hamburger/hamburgers.css");
+	wp_enqueue_style('Hamburgers');
 
+	wp_register_script('HamburgersJS', get_theme_file_uri() . "/hamburger/hamburgers.js", null, null, true);
+	wp_enqueue_script('HamburgersJS');
+}
 add_action('wp_enqueue_scripts', 'load_assets');
+
+
+
+
 
 // navigation menus
 register_nav_menus(
@@ -113,6 +123,37 @@ function custom_post_types()
 			'menu_icon'           => 'dashicons-welcome-write-blog'
 		)
 	);
+
+	// announcements
+	$labels_announcements = array(
+		'name'               => 'Announcements',
+		'singular_name'      => 'Announcement',
+		'menu_name'          => 'Announcements',
+		'add_new'            => 'Add New',
+		'add_new_item'       => 'Add New Announcement',
+		'edit'               => 'Edit',
+		'edit_item'          => 'Edit Announcement',
+		'new_item'           => 'New Announcement',
+		'view'               => 'View',
+		'view_item'          => 'View Announcement',
+		'search_items'       => 'Search Announcements',
+		'not_found'          => 'No Announcements found',
+		'not_found_in_trash' => 'No Announcements found in trash',
+		'parent'             => 'Parent Announcement'
+	);
+
+	register_post_type(
+		'announcements',
+		array(
+			'labels'              => $labels_announcements,
+			'public'              => true,
+			'has_archive'         => true,
+			'publicly_queryable'  => true,
+			'capability_type'     => 'post',
+			'supports'            => array('title', 'editor', 'thumbnail', 'custom-fields'),
+			'menu_icon'           => 'dashicons-bell'
+		)
+	);
 }
 
 add_action('init', 'custom_post_types');
@@ -121,7 +162,7 @@ add_action('init', 'custom_post_types');
 function admin_styles()
 {
 	echo '<style>
-		#menu-posts, #menu-media, #menu-comments {
+		#menu-posts, #menu-comments {
 			display: none;
 		}
 

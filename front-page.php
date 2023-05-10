@@ -12,6 +12,9 @@
 
 <!-- hero -->
 
+
+
+
 <section class="hero bg-primary">
 
 	<div class="section-container">
@@ -20,11 +23,7 @@
 
 
 		<div class="hero-text">
-			<!-- <h2 class="text-a">citycrosslink</h2> -->
-
-			<h1 class="text-b">
-				Where God meets your needs <br> through His Word.
-			</h1>
+			<?php echo get_post_meta(get_the_ID(), 'introduction', true) ?>
 		</div>
 
 
@@ -38,10 +37,62 @@
 
 </section>
 
+
+
+
+<!-- announcements -->
+
+
+
+
+<section class="announcements">
+	<div class="section-container">
+
+		<div class="card-wrapper">
+
+			<?php
+			$query1 = new WP_Query(array(
+				'post_type'		=>		'announcements'
+			));
+
+
+			if ($query1->have_posts()) :
+				while ($query1->have_posts()) : $query1->the_post() ?>
+
+					<div class="card">
+						<img class="image" src="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(), 'image', true)); ?>" alt="">
+
+						<div class="content-container">
+							<h3 class="title"><?php the_title(); ?></h3>
+							<p class="date"><?php echo get_post_meta(get_the_ID(), 'event_date', true) ?></p>
+							<p class="content"><?php the_content(); ?></p>
+						</div>
+
+
+					</div>
+
+			<?php endwhile;
+			endif;
+			wp_reset_postdata(); ?>
+
+		</div>
+
+	</div>
+</section>
+
 <!-- about -->
 
 <section class="about">
 	<div class="section-container">
+
+		<h3 class="section-heading">Who we are</h3>
+		<p class="section-content"><?php echo get_post_meta(get_the_ID(), 'about_brief', true); ?></p>
+
+		<a class="button bg-white" href="<?php echo get_post_meta(get_the_ID(), 'about_cta_link', true) ?>">
+			<?php echo get_post_meta(get_the_ID(), 'about_cta_button_label', true) ?>
+		</a>
+
+
 
 	</div>
 </section>

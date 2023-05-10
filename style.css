@@ -20,16 +20,26 @@ font-family: 'Roboto', sans-serif;
 */
 body {
   font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
 }
 
 h1 {
   font-family: "DM Serif Display", serif;
   font-weight: 900;
+  line-height: 5.5rem;
 }
 
 h2 {
   font-family: "DM Serif Display", serif;
   font-weight: 900;
+}
+
+h3 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 3.3rem;
 }
 
 a {
@@ -41,7 +51,7 @@ a {
 }
 
 .bg-primary {
-  background-color: #0088FF;
+  background-color: #006EB6;
 }
 
 .bg-white {
@@ -71,13 +81,12 @@ a {
 footer {
   width: 100%;
   height: 200px;
-  background-color: #272e34;
+  background-color: #272c30;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  display: none;
 }
 
 header {
@@ -85,13 +94,13 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  color: #0088ff;
+  color: #006eb6;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: #0088FF;
-  border-bottom: 1px solid white;
+  background-color: #006EB6;
+  border-bottom: 2px solid white;
 }
 header .header-nav {
   width: 100%;
@@ -106,9 +115,17 @@ header .header-nav .logo {
   display: flex;
   align-items: center;
   gap: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  transition: 400ms all;
+}
+header .header-nav .logo:hover {
+  opacity: 0.6;
 }
 header .header-nav .logo .logo-container {
-  border-right: 1px solid white;
+  border-right: 2px solid white;
   height: 100%;
   aspect-ratio: 1/1;
 }
@@ -122,6 +139,14 @@ header .header-nav .logo .logo-container .logo-a {
 header .header-nav .logo .logo-b {
   height: 80%;
   transform: translateY(-5%);
+}
+header .header-nav .hamburger-container {
+  margin-left: auto;
+  border-left: 2px solid white;
+  height: 100%;
+  width: auto;
+  display: grid;
+  place-items: center;
 }
 header .header-nav ul {
   list-style: none;
@@ -146,7 +171,7 @@ header .header-nav li .sub-menu {
   width: max-content;
   height: -moz-max-content;
   height: max-content;
-  background-color: #0088FF;
+  background-color: #006EB6;
   border-radius: 10px;
   padding: 20px;
   flex-direction: column;
@@ -166,7 +191,7 @@ header .header-nav a:visited {
   color: inherit;
 }
 header .header-nav .current-menu-item {
-  color: #0088FF;
+  color: #006EB6;
 }
 
 section {
@@ -184,7 +209,7 @@ section .section-container {
 
 body.home section.hero {
   position: relative;
-  height: 100vh;
+  height: calc(100vh + 0px);
   overflow: hidden;
 }
 body.home section.hero .section-container {
@@ -199,23 +224,28 @@ body.home section.hero .section-container .logo-icon {
   aspect-ratio: 1/1;
   -o-object-fit: contain;
      object-fit: contain;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 body.home section.hero .section-container .hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(3px 3px 15px rgba(13, 68, 115, 0.3));
+  filter: drop-shadow(3px 3px 15px rgba(13, 57, 86, 0.3));
 }
 body.home section.hero .section-container .hero-text .text-a {
   color: white;
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 30px;
+  display: none;
 }
 body.home section.hero .section-container .hero-text .text-b {
   color: white;
-  font-size: 4rem;
+  font-size: 5rem;
   text-align: center;
 }
 body.home section.hero .bg-image {
@@ -227,7 +257,86 @@ body.home section.hero .bg-image {
   aspect-ratio: 1/1;
   -o-object-fit: contain;
      object-fit: contain;
-  opacity: 0.5;
+  opacity: 0.3;
+}
+body.home section.announcements {
+  overflow: hidden;
+  position: relative;
+  background-color: #cce2f0;
+}
+body.home section.announcements .section-container {
+  z-index: 1;
+}
+body.home section.announcements .section-container .card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+body.home section.announcements .section-container .card-wrapper .card {
+  height: 400px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px rgba(13, 57, 86, 0.3);
+  overflow: hidden;
+  transition: 0.4s all ease-out;
+  cursor: pointer;
+  filter: saturate(0.3);
+  image-rendering: optimizeQuality;
+  text-rendering: optimizeLegibility;
+}
+body.home section.announcements .section-container .card-wrapper .card .image {
+  height: inherit;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.4s all ease-out;
+}
+body.home section.announcements .section-container .card-wrapper .card .content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 50px;
+  background-color: white;
+  box-shadow: 3px 3px 15px rgba(13, 57, 86, 0.3);
+  z-index: 1;
+}
+body.home section.announcements .section-container .card-wrapper .card .content-container .title {
+  color: #006EB6;
+}
+body.home section.announcements .section-container .card-wrapper .card:hover {
+  scale: 1.02;
+  filter: saturate(1);
+}
+body.home section.announcements .section-container .card-wrapper .card:hover .image {
+  scale: 1.08;
+}
+body.home section.announcements .bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.1;
+}
+body.home section.about {
+  background-color: #006EB6;
+  height: 400px;
+}
+body.home section.about .section-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body.home section.about .section-container .section-heading {
+  color: white;
+  margin-bottom: 30px;
+}
+body.home section.about .section-container .section-content {
+  color: white;
 }
 
 .card-container {
@@ -262,26 +371,26 @@ body.home section.hero .bg-image {
   font-size: 1rem;
   font-weight: 600;
   transition: 400ms all;
-  box-shadow: 3px 3px 15px rgba(13, 68, 115, 0.3);
+  box-shadow: 3px 3px 15px rgba(13, 57, 86, 0.3);
   margin-top: 30px;
 }
 .button.bg-primary {
-  background-color: #0088FF;
+  background-color: #006EB6;
   color: white;
   border: 2px solid white;
 }
 .button.bg-primary:hover {
   background-color: white;
-  color: #0088FF;
+  color: #006EB6;
   border: 2px solid white;
 }
 .button.bg-white {
   background-color: white;
-  color: #0088FF;
-  border: 2px solid #0088ff;
+  color: #006EB6;
+  border: 2px solid #006eb6;
 }
 .button.bg-white:hover {
-  background-color: #0088FF;
+  background-color: #006EB6;
   color: white;
   border: 2px solid white;
 }/*# sourceMappingURL=style.css.map */

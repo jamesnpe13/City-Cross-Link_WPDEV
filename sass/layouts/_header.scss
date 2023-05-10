@@ -9,7 +9,7 @@ header {
 	justify-content: center;
 	width: 100%;
 	background-color: $color-primary;
-	border-bottom: 1px solid $color-white;
+	border-bottom: 2px solid $color-white;
 
 	.header-nav {
 		$box-height: 60px;
@@ -31,9 +31,16 @@ header {
 			display: flex;
 			align-items: center;
 			gap: 20px;
+			user-select: none;
+			cursor: pointer;
+			transition: 400ms all;
+
+			&:hover {
+				opacity: 0.6;
+			}
 
 			.logo-container {
-				border-right: 1px solid white;
+				border-right: 2px solid $color-white;
 				height: 100%;
 				aspect-ratio: 1 / 1;
 
@@ -49,6 +56,15 @@ header {
 				height: 80%;
 				transform: translateY(-5%);
 			}
+		}
+
+		.hamburger-container {
+			margin-left: auto;
+			border-left: 2px solid $color-white;
+			height: 100%;
+			width: auto;
+			display: grid;
+			place-items: center;
 		}
 
 		ul {
