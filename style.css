@@ -42,6 +42,13 @@ h3 {
   line-height: 3.3rem;
 }
 
+h4 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 3.3rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -51,7 +58,7 @@ a {
 }
 
 .bg-primary {
-  background-color: #006EB6;
+  background-color: #0088ff;
 }
 
 .bg-white {
@@ -81,7 +88,7 @@ a {
 footer {
   width: 100%;
   height: 200px;
-  background-color: #272c30;
+  background-color: #272e34;
   color: white;
   display: flex;
   align-items: center;
@@ -91,15 +98,12 @@ footer {
 
 header {
   z-index: 100;
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #006eb6;
+  color: #0088ff;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  background-color: #006EB6;
+  background-color: #0088ff;
   border-bottom: 2px solid white;
 }
 header .header-nav {
@@ -171,7 +175,7 @@ header .header-nav li .sub-menu {
   width: max-content;
   height: -moz-max-content;
   height: max-content;
-  background-color: #006EB6;
+  background-color: #0088ff;
   border-radius: 10px;
   padding: 20px;
   flex-direction: column;
@@ -191,7 +195,7 @@ header .header-nav a:visited {
   color: inherit;
 }
 header .header-nav .current-menu-item {
-  color: #006EB6;
+  color: #0088ff;
 }
 
 section {
@@ -209,7 +213,7 @@ section .section-container {
 
 body.home section.hero {
   position: relative;
-  height: calc(100vh + 0px);
+  height: calc(100vh - 60px);
   overflow: hidden;
 }
 body.home section.hero .section-container {
@@ -234,7 +238,7 @@ body.home section.hero .section-container .hero-text {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(3px 3px 15px rgba(13, 57, 86, 0.3));
+  filter: drop-shadow(3px 3px 15px rgba(13, 68, 115, 0.3));
 }
 body.home section.hero .section-container .hero-text .text-a {
   color: white;
@@ -262,7 +266,6 @@ body.home section.hero .bg-image {
 body.home section.announcements {
   overflow: hidden;
   position: relative;
-  background-color: #cce2f0;
 }
 body.home section.announcements .section-container {
   z-index: 1;
@@ -278,7 +281,7 @@ body.home section.announcements .section-container .card-wrapper .card {
   display: grid;
   grid-template-columns: 2fr 3fr;
   border-radius: 10px;
-  box-shadow: 3px 3px 15px rgba(13, 57, 86, 0.3);
+  box-shadow: 3px 3px 15px rgba(13, 68, 115, 0.3);
   overflow: hidden;
   transition: 0.4s all ease-out;
   cursor: pointer;
@@ -300,11 +303,11 @@ body.home section.announcements .section-container .card-wrapper .card .content-
   gap: 10px;
   padding: 50px;
   background-color: white;
-  box-shadow: 3px 3px 15px rgba(13, 57, 86, 0.3);
+  box-shadow: 3px 3px 15px rgba(13, 68, 115, 0.3);
   z-index: 1;
 }
 body.home section.announcements .section-container .card-wrapper .card .content-container .title {
-  color: #006EB6;
+  color: #0088ff;
 }
 body.home section.announcements .section-container .card-wrapper .card:hover {
   scale: 1.02;
@@ -313,16 +316,10 @@ body.home section.announcements .section-container .card-wrapper .card:hover {
 body.home section.announcements .section-container .card-wrapper .card:hover .image {
   scale: 1.08;
 }
-body.home section.announcements .bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0.1;
-}
 body.home section.about {
-  background-color: #006EB6;
+  background-color: #0088ff;
   height: 400px;
+  position: relative;
 }
 body.home section.about .section-container {
   text-align: center;
@@ -337,6 +334,54 @@ body.home section.about .section-container .section-heading {
 }
 body.home section.about .section-container .section-content {
   color: white;
+}
+body.home section.groups .section-container {
+  max-width: 100%;
+  padding-inline: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+body.home section.groups .section-container .card {
+  height: min(600px, 100vh);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+body.home section.groups .section-container .card .content {
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+  z-index: 2;
+}
+body.home section.groups .section-container .card .bg-image {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+}
+body.home section.groups .section-container .card .bg-image .bg-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65));
+  mix-blend-mode: darken;
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+  z-index: 1;
+}
+body.home section.groups .section-container .card .bg-image img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  grid-row: 1/-1;
+  grid-column: 1/-1;
 }
 
 .card-container {
@@ -371,26 +416,26 @@ body.home section.about .section-container .section-content {
   font-size: 1rem;
   font-weight: 600;
   transition: 400ms all;
-  box-shadow: 3px 3px 15px rgba(13, 57, 86, 0.3);
+  box-shadow: 3px 3px 15px rgba(13, 68, 115, 0.3);
   margin-top: 30px;
 }
 .button.bg-primary {
-  background-color: #006EB6;
+  background-color: #0088ff;
   color: white;
   border: 2px solid white;
 }
 .button.bg-primary:hover {
   background-color: white;
-  color: #006EB6;
+  color: #0088ff;
   border: 2px solid white;
 }
 .button.bg-white {
   background-color: white;
-  color: #006EB6;
-  border: 2px solid #006eb6;
+  color: #0088ff;
+  border: 2px solid #0088ff;
 }
 .button.bg-white:hover {
-  background-color: #006EB6;
+  background-color: #0088ff;
   color: white;
   border: 2px solid white;
 }/*# sourceMappingURL=style.css.map */

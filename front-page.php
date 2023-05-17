@@ -26,7 +26,7 @@
 			<?php echo get_post_meta(get_the_ID(), 'introduction', true) ?>
 		</div>
 
-
+		<p><?php echo the_meta() ?></p>
 		<a class="button bg-white" href="<?php echo get_post_meta(get_the_ID(), 'hero_cta_link', true) ?>">
 			<?php echo get_post_meta(get_the_ID(), 'hero_cta_button_label', true) ?>
 		</a>
@@ -78,6 +78,8 @@
 		</div>
 
 	</div>
+
+	<!-- <div class="bg-image" /> -->
 </section>
 
 <!-- about -->
@@ -95,10 +97,59 @@
 
 
 	</div>
+
+
 </section>
 
 
+<!-- groups -->
 
+<section class="groups">
+
+	<div class="section-container">
+
+		<div class="card">
+			<div class="content">
+				<h3>Title</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, reiciendis?</p>
+			</div>
+			<div class="bg-image">
+
+				<div class="bg-overlay"></div>
+
+				<img src="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(), 'card_container_card_1_card_thumbnail', true)); ?>" alt="">
+			</div>
+		</div>
+<!-- 
+		<div class="card">
+			<div class="content">
+				<h3>Title</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, reiciendis?</p>
+			</div>
+			<div class="bg-image">
+
+				<div class="bg-overlay"></div>
+
+				<img src="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(), 'card_container_card_2_card_thumbnail', true)); ?>" alt="">
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="content">
+				<h3>Title</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, reiciendis?</p>
+			</div>
+			<div class="bg-image">
+
+				<div class="bg-overlay"></div>
+
+				<img src="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(), 'card_container_card_3_card_thumbnail', true)); ?>" alt="">
+			</div> -->
+		</div>
+
+
+
+</section>
 
 
 
